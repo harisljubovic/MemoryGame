@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+   
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    padding: 30px;
+    width: 380px;
+    background: #232534;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    padding-bottom: 30px;
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    color: #ffffff;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+.container .reset-btn {
+    all: unset;
+    height: 50px;
+    width: 180px;
+    background: #3015ba;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 18px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container .game {
+    width: 100%;
+    height: 350px;
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    height: 74px;
+    width: 74px;
+    background: #1bedf1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    transition: all .25s;
+    transform: rotateY(180deg);
+    
+    border-radius: 20px;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    transition: all .25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.boxOpen::after, .boxMatch::after {
+    transform: rotateY(180deg);
+}
+
+::selection {
+    background: rgb(100, 149, 237, 0.8);
+    color: #fff;
+}
+
