@@ -37,7 +37,12 @@ for (let i = 0; i < emojis.length; i++) {
           document.querySelectorAll(".boxOpen")[0].classList.remove("boxOpen");
 
           if (document.querySelectorAll(".boxMatch").length == emojis.length) {
-            window.location.reload();
+            const response = confirm("Start a new game?");
+            if (response === true) {
+              window.location.reload();
+            } else {
+              alert("Thank you for playing, come again soon!");
+            }
           }
         } else {
           document.querySelectorAll(".boxOpen")[1].classList.remove("boxOpen");
@@ -49,3 +54,7 @@ for (let i = 0; i < emojis.length; i++) {
   box.innerHTML = shuffleEmojis[i];
   document.querySelector(".container .game").appendChild(box);
 }
+
+// const response = confirm("Are you sure you want to do that?");
+
+//console.log(response);
