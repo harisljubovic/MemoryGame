@@ -9,10 +9,16 @@
   <body>
     <div class="container">
       <h2>Memory</h2>
+
       <div class="game"></div>
-      <button class="reset-btn" onclick="window.location.reload()">
-        RESET
-      </button>
+      <div class="resetAndStopwatch">
+        <div class="yourTime">
+          <label id="minutes">00</label>:<label id="seconds">00</label>
+        </div>
+        <button class="reset-btn" onclick="window.location.reload()">
+          RESET
+        </button>
+      </div>
     </div>
 
     <script src="./script.js"></script>

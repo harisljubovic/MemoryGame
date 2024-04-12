@@ -37,12 +37,8 @@ for (let i = 0; i < emojis.length; i++) {
           document.querySelectorAll(".boxOpen")[0].classList.remove("boxOpen");
 
           if (document.querySelectorAll(".boxMatch").length == emojis.length) {
-            const response = confirm("Start a new game?");
-            if (response === true) {
-              window.location.reload();
-            } else {
-              alert("Thank you for playing, come again soon!");
-            }
+            alert("Congrats! Start a new game.");
+            window.location.reload();
           }
         } else {
           document.querySelectorAll(".boxOpen")[1].classList.remove("boxOpen");
@@ -55,6 +51,24 @@ for (let i = 0; i < emojis.length; i++) {
   document.querySelector(".container .game").appendChild(box);
 }
 
-// const response = confirm("Are you sure you want to do that?");
+//STOPWATCH
 
-//console.log(response);
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}

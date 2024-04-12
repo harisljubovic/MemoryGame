@@ -11,8 +11,7 @@ body {
     background-position: center;
     width: 100%;
     height: 100vh;
-   
-    font-family: 'Courier New', Courier, monospace;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
@@ -26,14 +25,16 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 5px;
     padding-bottom: 30px;
+    
 }
 
 .container h2 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 5px;
     color: #ffffff;
-    margin-top: 3px;
+   
+    margin-bottom: 60px;
     text-transform: uppercase;
 }
 
@@ -41,14 +42,14 @@ body {
     all: unset;
     height: 50px;
     width: 180px;
-    background: #3015ba;
-    color: #fff;
+    background-color: rgb(234, 39, 39);
+    color:  #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 3px;
     margin: auto;
-    margin-top: 18px;
+    
     text-transform: uppercase;
     letter-spacing: 6px;
     font-size: 2rem;
@@ -59,7 +60,7 @@ body {
 .container .game {
     width: 100%;
     height: 350px;
-    margin-top: 25px;
+    margin: 50px 0 50px 0;
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
@@ -108,5 +109,27 @@ body {
 ::selection {
     background: rgb(100, 149, 237, 0.8);
     color: #fff;
+}
+
+.resetAndStopwatch {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+    
+}
+
+.yourTime {
+    height: 50px;
+    width: 180px;    
+    border-radius: 3px;
+    text-align: center;
+    background-color: rgb(17, 83, 165);
+    color:  #ffffff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
 }
 
