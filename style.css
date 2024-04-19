@@ -49,11 +49,9 @@ body {
     justify-content: center;
     border-radius: 3px;
     margin: auto;
-    
+    padding: 0 5px 0 5px;
     text-transform: uppercase;
-    letter-spacing: 6px;
     font-size: 2rem;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -111,20 +109,22 @@ body {
     color: #fff;
 }
 
-.resetAndStopwatch {
+.stopwatch {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 15px;
+    margin-bottom: 20px;
     
     
 }
 
-.yourTime {
+.yourTime, #alt-btns {
     height: 50px;
     width: 180px;    
+    border: none;
     border-radius: 3px;
     text-align: center;
-    background-color: rgb(17, 83, 165);
     color:  #ffffff;
     padding: 5px;
     display: flex;
@@ -133,3 +133,13 @@ body {
     font-size: 2rem;
 }
 
+.yourTime {
+
+    background-color: rgb(17, 83, 165);
+    
+}
+
+#alt-btns {
+    background-color: rgb(9, 159, 22);
+    cursor: pointer;
+}

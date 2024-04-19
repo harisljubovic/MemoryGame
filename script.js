@@ -45,30 +45,40 @@ for (let i = 0; i < emojis.length; i++) {
           document.querySelectorAll(".boxOpen")[0].classList.remove("boxOpen");
         }
       }
-    }, 500);
+    }, 850);
   };
   box.innerHTML = shuffleEmojis[i];
   document.querySelector(".container .game").appendChild(box);
 }
 
-//STOPWATCH
+// STOPWATCH //
 
-var minutesLabel = document.getElementById("minutes");
-var secondsLabel = document.getElementById("seconds");
-var totalSeconds = 0;
-setInterval(setTime, 1000);
+let time = 0;
+let interval;
+let display = document.getElementById("display");
+let altBtns = document.getElementById("alt-btns");
 
-function setTime() {
-  ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-}
-
-function pad(val) {
-  var valString = val + "";
-  if (valString.length < 2) {
-    return "0" + valString;
-  } else {
-    return valString;
+function startTimer() {
+  if (interval) {
+    clearInterval(interval);
   }
+  interval = setInterval(() => {
+    time += 1;
+    display.innerHTML =
+      Math.floor(time / 3600)
+        .toString()
+        .padStart(2, "0") +
+      ":" +
+      Math.floor((time % 3600) / 60)
+        .toString()
+        .padStart(2, "0") +
+      ":" +
+      Math.floor(time % 60)
+        .toString()
+        .padStart(2, "0");
+  }, 1000);
 }
+
+altBtns.onclick = function () {
+  startTimer();
+};
